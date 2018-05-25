@@ -9,6 +9,7 @@
 <body>
     
     <h1>welcome to chat {{ logged_in_as }}</h1>
+    <p>You ar logged in as {{ logged_in_as}}</p>
     
     <form action="/{{logged_in_as}}/new" method="POST">
         <input type="text" name="message" placeholder="What's happening?"/>
@@ -18,13 +19,12 @@
     {%for message in all_the_messages %}
     <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
     {% endfor %}
-    <script>
-        setTimeout(function() {
-            location.reload();
-        }, 5000);
+    <!--<script>-->
+    <!--    setTimeout(function() {-->
+    <!--        location.reload();-->
+    <!--    }, 5000);-->
         
-        if __name__ == '__main__':
-    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)))
-    </script>
+
+    <!--</script>-->
 </body>
 </html>
