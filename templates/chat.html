@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>welcome to chat {{ logged_in_as }}</h1>
+    
+    <form action="/{{logged_in_as}}/new" method="POST">
+        <input type="text" name="message" placeholder="What's happening?"/>
+        <input type="submit" value="Send"/>
+    </form>
+    
+    {%for message in all_the_messages %}
+    <p><strong>{{ message.sender }}</strong>: {{ message.body }}</p>
+    {% endfor %}
+    <script>
+        setTimeout(function() {
+            location.reload();
+        }, 5000);
+        
+        if __name__ == '__main__':
+    app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)))
+    </script>
+</body>
+</html>
